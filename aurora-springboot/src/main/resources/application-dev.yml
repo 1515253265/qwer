@@ -5,9 +5,9 @@ spring:
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://mysql的ip:3306/aurora?serverTimezone=Asia/Shanghai&allowMultiQueries=true
-    username: 账号
-    password: 密码
+    url: jdbc:mysql://8.130.22.105:3306/myblog?serverTimezone=Asia/Shanghai&allowMultiQueries=true
+    username: root
+    password: root
     hikari:
       minimum-idle: 10
       idle-timeout: 180000
@@ -17,9 +17,8 @@ spring:
       max-lifetime: 60000
       connection-timeout: 30000
       connection-test-query: SELECT 1
-
   redis:
-    host: 172.16.128.125
+    host: 8.130.22.105
     port: 6379
     password: zjp3265
     database: 0
@@ -31,10 +30,10 @@ spring:
         max-wait: 10000
 
   rabbitmq:
-    host: rabbitmq的ip
+    host: 8.130.22.105
     port: 5672
-    username: 账号
-    password: 密码
+    username: guest
+    password: guest
     listener:
       simple:
         retry:
@@ -48,8 +47,8 @@ spring:
 
   mail:
     host: smtp.163.com
-    username: 邮箱
-    password: 密码
+    username: zjp3265@163.com
+    password: zjp0107.
     default-encoding: UTF-8
     protocol: smtp
     port: 465
@@ -76,10 +75,8 @@ mybatis-plus:
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
     map-underscore-to-camel-case: true
-
 jwt:
   secret: aurora
-
 search:
   mode: elasticsearch
 
